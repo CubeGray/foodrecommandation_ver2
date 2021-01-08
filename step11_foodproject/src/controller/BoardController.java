@@ -17,7 +17,7 @@ public class BoardController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		String command = request.getParameter("command");
-		if("command"==null) {
+		if(command==null) {
 			command="main";
 		}
 		ActionFactory af = ActionFactory.getInstance();
