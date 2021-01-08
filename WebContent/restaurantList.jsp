@@ -7,13 +7,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>모든 음식점 리스트(관리자 version)</title>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
+
+<script type="text/javascript">
+	function req(){
+		 axios.get('restaurantInsert.jsp', {
+		  /*  params : {
+			   //command: "restaurantInsert"
+		   } */
+		 })
+		 .then(response => { 
+		  	/* console.log(response.data); */
+		   	document.getElementById("ListTable").innerHTML
+		   	= response.data;
+		 })
+		 .catch(error => {
+		   console.log(error);
+		 }); 
+	 };
+</script>
+
 <br><br><br>
 <center>
+
+<div id ="ListTable">
 <h3>모든 restaurant 리스트</h3>
 <hr><p>
-<table border="1">
+<table border="1" >
 	<tr>
 		<th>No</th>
 		<th>Name</th>
@@ -34,12 +57,13 @@
 	
 </table>
 <br><br><br>
-<a href="restaurantInsert.jsp">음식점 추가</a>
+<a href="javascript:void(0);" onclick="req();">음식점 추가</a>
 
 &nbsp;&nbsp;&nbsp;<a href="total">메인 화면 이동</a>
 
 
 <br><br><br>
 </center>
+</div>  
 </body>
 </html>
