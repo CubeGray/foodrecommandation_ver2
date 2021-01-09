@@ -31,7 +31,3 @@
 </form>
 <br><br><br>
 <a href="total?command=restaurantgetAll">모든 음식점 보기</a>
-
-</center>
-</body>
-</html>
