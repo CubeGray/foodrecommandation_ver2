@@ -19,8 +19,7 @@ ${sessionScope.successMsg}
  
 <table border="1">
 	<tr>
-		<th>ID</th><th>Name</th><th>Maplink</th><th>Pagelink</th>
-		
+		<th>ID</th><th>Name</th><th>Maplink</th><th>Pagelink</th>	
 	</tr>
 	
     
@@ -35,10 +34,7 @@ ${sessionScope.successMsg}
 
 <br><br><br>
 
-
 <a href="total?command=restaurantgetAll">모든 음식점 보기</a>
-
-
 
 </center>
 </body>

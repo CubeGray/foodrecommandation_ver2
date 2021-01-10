@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 
 <h1>상세분류를 선택하세요.</h1>
-<table border="1" >
+<table border="1">
 <tr>
 <c:forEach items="${sessionScope.specifics}" var="data">
 	<c:choose>

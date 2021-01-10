@@ -68,8 +68,7 @@
 			&nbsp;&nbsp;&nbsp;<a href="total">메인 화면 이동</a> <br>
 			<br>
 			<br>	
-		</div>
-		
+		</div>		
 	</center>	
 </body>
 
