@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 
 <h3>식당 정보</h3>
+
 <hr><p>
 
 <form action="total?command=restaurantInsert" method="post">                                 
