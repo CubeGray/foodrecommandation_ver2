@@ -64,7 +64,7 @@
 		    </div>
 		</div>
 		
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdadfee13fcde83ec49d0eb1d6a30f9b&libraries=services"></script>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdadfee13fcde83ec49d0eb1d6a30f9b&libraries=services,clusterer,drawing"></script>
 		<script>
 		// 마커를 담을 배열입니다
 		var markers = [];
@@ -74,6 +74,7 @@
 		        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
 		        level: 3 // 지도의 확대 레벨
 		    };  
+		
 		
 		// 지도를 생성합니다    
 		var map = new kakao.maps.Map(mapContainer, mapOption); 
