@@ -12,9 +12,16 @@ public class RestaurantUpdate implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "showError.jsp";
 		String maplink = request.getParameter("maplink");
-
-		if (maplink != null && maplink.trim().length() != 0 &&
-				maplink.trim().length() == maplink.length()) {
+		boolean flag=true;
+	
+		for(int i=0;i<maplink.length();i++) {
+			if(maplink.charAt(i)==' ') {
+				flag=false;
+				break;
+			}
+		}
+		
+		if (flag && maplink != null && (maplink.trim()).length() == maplink.length()) {
 
 			try {
 				RestaurantDAO.updateRestaurant(request.getParameter("rid"), maplink);

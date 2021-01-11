@@ -16,7 +16,18 @@
 	 		<td>식당 이름</td><td><input type="text" name="rname"></td>
 		</tr>
 		<tr>	
-			<td>세부카테고리 이름</td><td><input type="text" name="sname"></td>
+			<td>세부카테고리 이름</td>
+			<td>
+					<select name="specifics" id="specifics">
+					    <option value="국물류">국물류</option>
+					    <option value="분식류">분식류</option>
+					    <option value="패스트푸드">패스트푸드</option>
+					    <option value="파스타">파스타</option>
+					    <option value="중식">중식</option>
+					    <option value="초밥">초밥</option>
+					    <option value="돈가스">돈가스</option>
+  					</select>
+			</td>
 	 	</tr>
 	 	<tr>
 	 		<td>지도 link</td><td><input type="text" name="maplink"></td>
