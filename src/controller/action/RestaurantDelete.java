@@ -6,7 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.dao.FoodService;
+import model.dao.RestaurantDAO;
 
 public class RestaurantDelete implements Action{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -14,9 +14,9 @@ public class RestaurantDelete implements Action{
 		String rid = request.getParameter("rid");
 
 		try {
-			boolean result = FoodService.deleteRestaurant(rid);
+			boolean result = RestaurantDAO.deleteRestaurant(rid);
 			if(result) {
-				request.getSession().setAttribute("restaurantAll",FoodService.getAllRestaurant());
+				request.getSession().setAttribute("restaurantAll",RestaurantDAO.getAllRestaurant());
 				request.getSession().setAttribute("seccessMsg","레스토랑 삭제완료");
 				url = "restaurantList.jsp";
 			}else {

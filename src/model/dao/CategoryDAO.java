@@ -1,13 +1,11 @@
 package model.dao;
 
-import java.util.ArrayList;
 
 import javax.persistence.EntityManager;
 
 import food.exception.NotExistException;
 import food.model.util.PublicCommon;
 import lombok.extern.slf4j.Slf4j;
-import model.entity.CategoryEntity;
 
 @Slf4j
 public class CategoryDAO {

@@ -6,7 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.dao.FoodService;
 
 public class MainPage implements Action{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		

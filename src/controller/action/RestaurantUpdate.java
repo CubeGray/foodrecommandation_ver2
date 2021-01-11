@@ -6,19 +6,30 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.dao.FoodService;
+import model.dao.RestaurantDAO;
 
-public class RestaurantUpdate implements Action{
+public class RestaurantUpdate implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "showError.jsp";
-		try {
-			FoodService.updateRestaurant(request.getParameter("rid"), request.getParameter("maplink"));
-			request.getSession().setAttribute("restaurant",FoodService.getSingleRestaurant(request.getParameter("rid")));
-			request.getSession().setAttribute("successMsg", "수정 완료");	
-			url = "restaurantDetail.jsp";
-		}catch(Exception s){
-			request.getSession().setAttribute("errorMsg", s.getMessage());
-			s.printStackTrace();
+		String maplink = request.getParameter("maplink");
+
+		if (maplink != null && maplink.trim().length() != 0 &&
+				maplink.trim().length() == maplink.length()) {
+
+			try {
+				RestaurantDAO.updateRestaurant(request.getParameter("rid"), maplink);
+				request.getSession().setAttribute("restaurant",
+						RestaurantDAO.getSingleRestaurant(request.getParameter("rid")));
+				request.getSession().setAttribute("successMsg", "수정 완료");
+				url = "restaurantDetail.jsp";
+
+			} catch (Exception s) {
+				request.getSession().setAttribute("errorMsg", s.getMessage());
+				s.printStackTrace();
+			}
+
+		} else {
+			request.getSession().setAttribute("errorMsg", "지도 링크 입력값을 다시 한번 확인해주세요.");
 		}
 		request.getRequestDispatcher(url).forward(request, response);
 	}
