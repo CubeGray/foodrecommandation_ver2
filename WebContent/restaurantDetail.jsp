@@ -16,7 +16,6 @@
   <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
   <div class="w3-center">
   <h1 class="w3-xxxlarge w3-animate-bottom">Food Suggestion</h1>
-
   </div>
 </header>
 
