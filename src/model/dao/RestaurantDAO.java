@@ -20,9 +20,9 @@ public class RestaurantDAO {
 		boolean flag=false;
 		
 		try {
-			int result = em.createNativeQuery("insert into restaurant values(?, ?, ?, ?,?)")
+			int result = em.createNativeQuery("insert into restaurant values(?, ?, ?, ?)")
 					.setParameter(1, r.getRid()).setParameter(2, r.getRname())
-					.setParameter(3, r.getSid()).setParameter(4, r.getMaplink()).setParameter(5, r.getPagelink()).executeUpdate();
+					.setParameter(3, r.getSid()).setParameter(4, r.getPagelink()).executeUpdate();
 			if(result==0) {
 				log.info("insert into restaurant 실패");
 				throw new NotExistException("insert into restaurant 실패");
@@ -42,16 +42,16 @@ public class RestaurantDAO {
 	}
 	
 	// 레스토랑수정
-	// rid로 maplink내용 수정하기
-	public static boolean updateRestaurant(String rid, String mlink) throws Exception {
+	// rid로 pagelink내용 수정하기
+	public static boolean updateRestaurant(String rid, String plink) throws Exception {
 		EntityManager em = PublicCommon.getEntityManger();
 		EntityTransaction tx = em.getTransaction();
 		boolean flag=false;
 		
 		tx.begin();
 		try {
-			int result = em.createNativeQuery("update restaurant set map_link=? where r_id=?")
-					.setParameter(1, mlink).setParameter(2, rid).executeUpdate();
+			int result = em.createNativeQuery("update restaurant set page_link=? where r_id=?")
+					.setParameter(1, plink).setParameter(2, rid).executeUpdate();
 			if (result == 0) {
 				log.info("update restaurant 실패");
 				throw new NotExistException("update restaurant 실패");				

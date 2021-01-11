@@ -30,9 +30,6 @@
 			</td>
 	 	</tr>
 	 	<tr>
-	 		<td>지도 link</td><td><input type="text" name="maplink"></td>
-	 	</tr>
-	 	<tr>
 	 		<td>상세정보 link</td><td><input type="text" name="pagelink"></td>
 	 	</tr>
 	 	<tr>

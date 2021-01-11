@@ -18,15 +18,14 @@ public class RestaurantInsert implements Action {
 		String rid = request.getParameter("rid");
 		String rname = request.getParameter("rname");
 		SpecificEntity sid = null;
-		String maplink = request.getParameter("maplink");
 		String pagelink = request.getParameter("pagelink");
 
 		if (rid != null && rid.length() != 0 && rname != null && rname.length() != 0
-				&& maplink != null && maplink.length() != 0 && pagelink != null && pagelink.length() != 0) {
+				&& pagelink != null && pagelink.length() != 0) {
 
 			try {
 				sid = SpecificDAO.getSpecificEntity(request.getParameter("specifics"));
-				RestaurantEntity restaurant = new RestaurantEntity(rid, rname, sid, maplink, pagelink);
+				RestaurantEntity restaurant = new RestaurantEntity(rid, rname, sid, pagelink);
 
 				boolean result = RestaurantDAO.addRestaurant(restaurant);
 

@@ -11,20 +11,25 @@ import model.dao.RestaurantDAO;
 public class RestaurantUpdate implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "showError.jsp";
-		String maplink = request.getParameter("maplink");
+		String pagelink = request.getParameter("pagelink");
 		boolean flag=true;
-	
-		for(int i=0;i<maplink.length();i++) {	//빈문자입력시 예외처리를 위한 flag체크
-			if(maplink.charAt(i)==' ') {
-				flag=false;
-				break;
+
+		if(pagelink==null) {
+			System.out.println("pagelink null!!!!!!!!!!!!!!!1");
+			flag=false;
+		}else {
+			for(int i=0;i<pagelink.length();i++) {	//빈문자입력시 예외처리를 위한 flag체크
+				if(pagelink.charAt(i)==' ') {
+					flag=false;
+					break;
+				}
 			}
 		}
-		
-		if (flag && maplink != null && (maplink.trim()).length() == maplink.length()) {
+
+		if (flag && pagelink != null && (pagelink.trim()).length() == pagelink.length()) {
 
 			try {
-				RestaurantDAO.updateRestaurant(request.getParameter("rid"), maplink);
+				RestaurantDAO.updateRestaurant(request.getParameter("rid"), pagelink);
 				request.getSession().setAttribute("restaurant",
 						RestaurantDAO.getSingleRestaurant(request.getParameter("rid")));
 				request.getSession().setAttribute("successMsg", "수정 완료");

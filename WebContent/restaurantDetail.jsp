@@ -16,8 +16,7 @@
 <header class="w3-container w3-theme w3-padding" id="myHeader">
   <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
   <div class="w3-center">
-  <h4>BEAUTIFUL RESPONSIVE WEB SITES</h4>
-  <h1 class="w3-xxxlarge w3-animate-bottom">kk</h1>
+  <h1 class="w3-xxxlarge w3-animate-bottom">Food Suggestion</h1>
 
   </div>
 </header>
@@ -37,14 +36,13 @@ ${sessionScope.successMsg}
  
 <table border="1">
 	<tr>
-		<th>ID</th><th>Name</th><th>Maplink</th><th>Pagelink</th>	
+		<th>ID</th><th>Name</th><th>Pagelink</th>	
 	</tr>
 	
     
  	<tr>
  		<td>${sessionScope.restaurant.rid}</td>
  		<td>${sessionScope.restaurant.rname}</td>
- 		<td>${sessionScope.restaurant.maplink}</td>
  		<td>${sessionScope.restaurant.pagelink}</td>
  	</tr>
  
