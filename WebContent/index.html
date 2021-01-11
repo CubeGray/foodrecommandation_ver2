@@ -17,14 +17,16 @@
 	margin: 4px 2px;
 	cursor: pointer;
 }
+
 .container {
-  border: 3px solid #fff;
-  padding: 10px;
+	border: 3px solid #fff;
+	padding: 10px 150px;
 }
-.w3-center{
+
+.w3-center {
 	width: 140%;
-    float: center;
-    padding: 2rem;
+	float: center;
+	padding: 2rem;
 }
 </style>
 <title>맛집 추천</title>
@@ -51,10 +53,7 @@
 		<i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i>
 		<div class="w3-cen">
 			<h4>Make better choice!</h4>
-			<h1 class="w3-xxxlarge w3-animate-bottom">
-				플레이데이터 주변 맛집
-				추천
-			</h1>
+			<h1 class="w3-xxxlarge w3-animate-bottom">플레이데이터 주변 맛집 추천</h1>
 			<div class="w3-padding-32"></div>
 		</div>
 	</center>
@@ -63,40 +62,36 @@
 	<br>
 	<br>
 	<center>
-	
-		<img src="img/a1.png">	
+
+		<img src="img/a1.png">
 		<hr>
 		<div class="w3-row-padding w3-center w3-margin-top">
-		<div class="container">
-		<div class="one">
-			<div class="w3-third">
-				<div class="w3-card w3-container" style="min-height: 460px">
-					<h3>
-						Lists of Restaurants <br> &nbsp;&nbsp;&nbsp;<a
-							href="total?command=restaurantgetAll"><button
-								class="button button">click me!</button></a>
-					</h3>
-					<br> <i class="fa fa-desktop w3-margin-bottom w3-text-theme"
-						style="font-size: 120px"></i>
-					<p>Administrators only</p>
+			<div class="container">
+				<div class="w3-third">
+					<div class="w3-card w3-container" style="min-height: 460px">
+						<h3>
+							Lists of Restaurants <br> &nbsp;&nbsp;&nbsp;<a
+								href="total?command=restaurantgetAll"><button
+									class="button button">click me!</button></a>
+						</h3>
+						<br> <i class="fa fa-desktop w3-margin-bottom w3-text-theme"
+							style="font-size: 120px"></i>
+						<p>Administrators only</p>
+					</div>
+				</div>
+				<div class="w3-third">
+					<div class="w3-card w3-container" style="min-height: 460px">
+						<h3>
+							Find Restaurants <br> &nbsp;&nbsp;&nbsp;<a
+								href="categoryList.jsp"><button class="button button">click
+									me!</button></a>
+						</h3>
+						<br> <i class="fa fa-cutlery w3-margin-bottom w3-text-theme"
+							style="font-size: 120px"></i>
+						<p>Find your perfect restaurants!</p>
+					</div>
 				</div>
 			</div>
-			</div>
-		<div class="two">
-			<div class="w3-third">
-				<div class="w3-card w3-container" style="min-height: 460px">
-					<h3>
-						Find Restaurants <br> &nbsp;&nbsp;&nbsp;<a
-							href="categoryList.jsp"><button class="button button">click
-								me!</button></a>
-					</h3>
-					<br> <i class="fa fa-cutlery w3-margin-bottom w3-text-theme"
-						style="font-size: 120px"></i>
-					<p>Find your perfect restaurants!</p>
-				</div>
-			</div>
-			</div>
-		</div>
 		</div>
 	</center>
 	<script>
@@ -110,8 +105,6 @@
 		function w3_close() {
 			document.getElementById("mySidebar").style.display = "none";
 		}
-		
-		
 	</script>
 </body>
 </html>

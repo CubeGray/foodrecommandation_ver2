@@ -44,20 +44,19 @@
 </style>
 </div>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-	<center>
-		<header class="w3-container w3-theme w3-padding" id="myHeader">
+
+<center>
+<header class="w3-container w3-theme w3-padding" id="myHeader">
   <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
   <div class="w3-center">
   <h3>위치 정보 결과</h3>
-
-
   </div>
 </header>
+</center>
 
-	</center>
 		<div class="map_wrap">
 		    <div id="map" style="width:100%;height:150%;position:relative;overflow:hidden;"></div>
 		
