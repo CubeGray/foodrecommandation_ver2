@@ -19,7 +19,6 @@ CREATE TABLE restaurant (
         r_id        varchar2(10)                PRIMARY KEY,
         r_name        varchar2(50)                NOT NULL,
         s_id        varchar2(10)                 NOT NULL,
-        map_link        varchar2(2000)                NOT NULL,
         page_link        varchar2(2000)                 NOT NULL
 );
 ALTER TABLE specific ADD FOREIGN KEY (c_id) REFERENCES category (c_id);

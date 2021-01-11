@@ -32,9 +32,6 @@ public class RestaurantEntity {
 		@JoinColumn(name="s_id")
 		private SpecificEntity sid;
 		
-		@Column(name="map_link")
-		private String maplink;
-		
 		@Column(name="page_link")
 		private String pagelink;				
 }
