@@ -43,16 +43,29 @@
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
 </style>
 </div>
-	<h3>위치검색결과</h3>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+	<center>
+		<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+  <h3>위치 정보 결과</h3>
+
+
+  </div>
+</header>
+
+	</center>
 		<div class="map_wrap">
-		    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+		    <div id="map" style="width:100%;height:150%;position:relative;overflow:hidden;"></div>
 		
 		    <div id="menu_wrap" class="bg_white">
 		        <div class="option">
 		            <div>
 		                <form onsubmit="searchPlaces(); return false;">
 		                    키워드 : <input type="text" value="${param.value}" id="keyword" size="15">
-		                    <script>alert(${param.value})</script>
 		                    <button type="submit">검색하기</button>
 		                </form>
 		            </div>

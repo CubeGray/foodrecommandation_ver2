@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 <title>음식점 추천 결과 화면</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 <body>
 
 
@@ -26,7 +26,7 @@
 <script>
 	function tokakaomap(r) {
 		console.log(r);
-		document.getElementById("tid").innerHTML = "<iframe id='test' marginheight='0' marginwidth='0' width='1000' height='500' src='kakaoMap.jsp?value="
+		document.getElementById("tid").innerHTML = "<iframe id='test' scrolling='no' marginheight='0' marginwidth='0' width='1500' height='750' src='kakaoMap.jsp?value="
 				+ r + "' frameBorder='1'></iframe>"
 	}
 </script>
@@ -57,7 +57,7 @@
 							<button onclick="tokakaomap('${data.rname}')">지도보기</button>
 						</td>
 						<td>
-							<button onclick="location.href='${data.pagelink}'">상세정보</button>
+							<button onclick="location.href='${data.pagelink}'" style="height:27px; width:140px;">상세정보</button>
 						</td>
 					</tr>
 				</c:forEach>
