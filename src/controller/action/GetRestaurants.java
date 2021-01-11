@@ -13,7 +13,6 @@ public class GetRestaurants implements Action{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		String url = "showError.jsp";
 		
-		
 		try {
 			String sid = SpecificDAO.getSid(request.getParameter("sname"));
 			request.getSession().setAttribute("successMsg", "검색 성공");

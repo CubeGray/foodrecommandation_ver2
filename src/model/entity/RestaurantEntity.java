@@ -21,7 +21,6 @@ import lombok.ToString;
 @Entity
 @Table(name="restaurant")
 public class RestaurantEntity {
-		
 		@Id
 		@Column(name="r_id")
 		private String rid;

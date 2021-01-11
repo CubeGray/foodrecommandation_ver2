@@ -12,7 +12,7 @@ import controller.action.Action;
 
 
 @WebServlet("/total")
-public class BoardController extends HttpServlet {	
+public class FoodController extends HttpServlet {	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		

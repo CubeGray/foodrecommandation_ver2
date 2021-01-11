@@ -21,5 +21,4 @@ public class RestaurantgetAll implements Action {
 		}
 		request.getRequestDispatcher(url).forward(request, response);
 	}
-
 }

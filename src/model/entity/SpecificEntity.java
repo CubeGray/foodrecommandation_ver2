@@ -24,7 +24,6 @@ import lombok.ToString;
 @Entity
 @Table(name="specific")
 public class SpecificEntity {
-	
 	@Id
 	@Column(name="s_id")
 	private String sid;

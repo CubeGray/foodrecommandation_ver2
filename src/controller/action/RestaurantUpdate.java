@@ -14,7 +14,7 @@ public class RestaurantUpdate implements Action {
 		String maplink = request.getParameter("maplink");
 		boolean flag=true;
 	
-		for(int i=0;i<maplink.length();i++) {
+		for(int i=0;i<maplink.length();i++) {	//빈문자입력시 예외처리를 위한 flag체크
 			if(maplink.charAt(i)==' ') {
 				flag=false;
 				break;
@@ -34,7 +34,6 @@ public class RestaurantUpdate implements Action {
 				request.getSession().setAttribute("errorMsg", s.getMessage());
 				s.printStackTrace();
 			}
-
 		} else {
 			request.getSession().setAttribute("errorMsg", "지도 링크 입력값을 다시 한번 확인해주세요.");
 		}
