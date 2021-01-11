@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
+<div>
     <meta charset="utf-8">
     <title>키워드로 장소검색하고 목록으로 표출하기</title>
-    <style>
+<style>
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
 .map_wrap {position:relative;width:100%;height:500px;}
@@ -14,7 +12,7 @@
 .bg_white {background:#fff;}
 #menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
 #menu_wrap .option{text-align: center;}
-#menu_wrap .option p {margin:10px 0;}  
+#menu_wrap .option p {margin:10px 0;}
 #menu_wrap .option button {margin-left:5px;}
 #placesList li {list-style: none;}
 #placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
@@ -44,17 +42,18 @@
 #pagination a {display:inline-block;margin-right:10px;}
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
 </style>
-		</head>
-		<body>
+</div>
+	<h3>위치검색결과</h3>
 		<div class="map_wrap">
-		    <div id="map" style="width:100%;height:200%;position:relative;overflow:hidden;"></div>
+		    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
 		
 		    <div id="menu_wrap" class="bg_white">
 		        <div class="option">
 		            <div>
 		                <form onsubmit="searchPlaces(); return false;">
-		                    키워드 : <input type="text" value="${param.rname}" id="keyword" size="15"> 
-		                    <button type="submit">검색하기</button> 
+		                    키워드 : <input type="text" value="${param.value}" id="keyword" size="15">
+		                    <script>alert(${param.value})</script>
+		                    <button type="submit">검색하기</button>
 		                </form>
 		            </div>
 		        </div>
@@ -64,23 +63,22 @@
 		    </div>
 		</div>
 		
-		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdadfee13fcde83ec49d0eb1d6a30f9b&libraries=services,clusterer,drawing"></script>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fdadfee13fcde83ec49d0eb1d6a30f9b&libraries=services"></script>
 		<script>
 		// 마커를 담을 배열입니다
 		var markers = [];
 		
-		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 		    mapOption = {
 		        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
 		        level: 3 // 지도의 확대 레벨
-		    };  
+		    };
 		
-		
-		// 지도를 생성합니다    
-		var map = new kakao.maps.Map(mapContainer, mapOption); 
+		// 지도를 생성합니다
+		var map = new kakao.maps.Map(mapContainer, mapOption);
 		
 		// 장소 검색 객체를 생성합니다
-		var ps = new kakao.maps.services.Places();  
+		var ps = new kakao.maps.services.Places();
 		
 		// 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
 		var infowindow = new kakao.maps.InfoWindow({zIndex:1});
@@ -99,7 +97,7 @@
 		    }
 		
 		    // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-		    ps.keywordSearch( keyword, placesSearchCB); 
+		    ps.keywordSearch( keyword, placesSearchCB);
 		}
 		
 		// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
@@ -129,23 +127,23 @@
 		// 검색 결과 목록과 마커를 표출하는 함수입니다
 		function displayPlaces(places) {
 		
-		    var listEl = document.getElementById('placesList'), 
+		    var listEl = document.getElementById('placesList'),
 		    menuEl = document.getElementById('menu_wrap'),
-		    fragment = document.createDocumentFragment(), 
-		    bounds = new kakao.maps.LatLngBounds(), 
+		    fragment = document.createDocumentFragment(),
+		    bounds = new kakao.maps.LatLngBounds(),
 		    listStr = '';
-		    
+		   
 		    // 검색 결과 목록에 추가된 항목들을 제거합니다
 		    removeAllChildNods(listEl);
 		
 		    // 지도에 표시되고 있는 마커를 제거합니다
 		    removeMarker();
-		    
+		   
 		    for ( var i=0; i<places.length; i++ ) {
 		
 		        // 마커를 생성하고 지도에 표시합니다
 		        var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
-		            marker = addMarker(placePosition, i), 
+		            marker = addMarker(placePosition, i),
 		            itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
 		
 		        // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
@@ -196,11 +194,11 @@
 		        itemStr += '    <span>' + places.road_address_name + '</span>' +
 		                    '   <span class="jibun gray">' +  places.address_name  + '</span>';
 		    } else {
-		        itemStr += '    <span>' +  places.address_name  + '</span>'; 
+		        itemStr += '    <span>' +  places.address_name  + '</span>';
 		    }
-		                 
+		                
 		      itemStr += '  <span class="tel">' + places.phone  + '</span>' +
-		                '</div>';           
+		                '</div>';
 		
 		    el.innerHTML = itemStr;
 		    el.className = 'item';
@@ -220,7 +218,7 @@
 		        markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
 		            marker = new kakao.maps.Marker({
 		            position: position, // 마커의 위치
-		            image: markerImage 
+		            image: markerImage
 		        });
 		
 		    marker.setMap(map); // 지도 위에 마커를 표출합니다
@@ -233,7 +231,7 @@
 		function removeMarker() {
 		    for ( var i = 0; i < markers.length; i++ ) {
 		        markers[i].setMap(null);
-		    }   
+		    }
 		    markers = [];
 		}
 		
@@ -241,7 +239,7 @@
 		function displayPagination(pagination) {
 		    var paginationEl = document.getElementById('pagination'),
 		        fragment = document.createDocumentFragment(),
-		        i; 
+		        i;
 		
 		    // 기존에 추가된 페이지번호를 삭제합니다
 		    while (paginationEl.hasChildNodes()) {
@@ -278,11 +276,9 @@
 		}
 		
 		 // 검색결과 목록의 자식 Element를 제거하는 함수입니다
-		function removeAllChildNods(el) {   
+		function removeAllChildNods(el) {
 		    while (el.hasChildNodes()) {
 		        el.removeChild (el.lastChild);
 		    }
 		}
 		</script>
-		</body>
-		</html>
