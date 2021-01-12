@@ -239,7 +239,7 @@ javascript 코드를 파싱한다. 이후 HTML 파싱을 계속하게 된다.
 
 
 #
-## CONTROLLER - 다형성 사용 
+## :open_file_folder: CONTROLLER - 다형성 사용 
 
 - 객체 참조변수 1개(action)만 선언하고 같은 메소드 명(execute)을 사용하여 여러가지 기능을 할 수 있음.
 - 다양한 메소드들을 클래스로 분리하는 구조로 변경하므로써 각 기능들의 독립성이 높아지고 유지보수성이 용이하다는 장점이 있다.
@@ -323,11 +323,13 @@ public class ActionFactory {
 </div>
 </details>
 
-2. script태그 위치
+#
+## :open_file_folder: script태그 위치
 - body태그 최하단에 위치하는 것이 좋음
 - HTML 파싱이 끝나고 DOM 트리가 생기기 전 자바스크립트가 실행되면서 DOM 객체를 조작할 경우 에러가 발생할 수 있다. 
 
-3. 비동기
+#
+## :open_file_folder: script태그 위치
 - 카테고리화면에서 세부카테고리 화면으로 전환시 비동기 방식으로 구현
 - mouseout vs mouseleave
 	- mouse leave : 자식 요소에는 동작하지 않고 지정한 태그 범위에만 적용됨.
