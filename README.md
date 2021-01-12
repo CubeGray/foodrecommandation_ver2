@@ -332,7 +332,7 @@ public class ActionFactory {
 ## :gun: 비동기
 - 카테고리화면에서 세부카테고리 화면으로 전환시 비동기 방식으로 구현
 - mouseout :vs: mouseleave
-	- mouse leave : 자식 요소에는 동작하지 않고 지정한 태그 범위에만 적용됨.
+	- mouseleave : 자식 요소에는 동작하지 않고 지정한 태그 범위에만 적용됨.
 	- mouseout : 자식 요소에 접근해도 동작을 함. 이벤트가 자식들에게도 적용됨.
 	
 <details>
