@@ -214,12 +214,13 @@ public class SpecificEntity {
 ## :open_file_folder: Kakao Map opensource API 사용
 기존에 DB에 저장된 외부링크를 통해 구현했던 카카오맵을 비동기 방식으로 페이지에 삽입하기 위해 Kakao devleopers(https://developers.kakao.com/)의 오픈소스를 통해 로컬에서 맵기능 구현
 #
-> 1. 문제점 : 비동기 형식으로 맵을 구현하려고 했으나 지도가 로드되지 않음
+> 문제점 : 비동기 형식으로 맵을 구현하려고 했으나 지도가 로드되지 않음
 -브라우저의 동작 방식에 의해 HTML 태그들을 파싱하는 도중 script 태그를 만나게되면 파싱을 중단 하고 javascript 파일을 로드 후
 javascript 코드를 파싱한다. 이후 HTML 파싱을 계속하게 된다.
 - 직접 태그를 넣어주거나 동기로 구현하게 되었을 경우 처음부터 모든 태그를 파싱하기 때문에 파싱 및 로딩과정에서 문제가 되지 않지만 비동기 방식으로 정보를 받아올 때 문제가 생김
 - 예상원인 : 이미 모든 태그가 파싱된 상태에서 버튼 클릭시 비동기로 script 태그를 받아오게 되는데 이미 파싱이 끝난 시점이라 script태그 내부의 코드가 로드되지 않은 것 같다.
-:heavy_exclamation_mark: iframe사용 : 
+#
+:heavy_exclamation_mark:iframe사용 
 - 비동기로 구현하려 부단한 노력을 하였지만 iframe 태그를 활용하여 동기방식으로 지도 페이지를 레스토랑 결과 페이지 내에 구현
 
 <details>
