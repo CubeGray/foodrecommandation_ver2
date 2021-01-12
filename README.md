@@ -330,6 +330,7 @@ public class ActionFactory {
 
 #
 ## :gun: 비동기
+- 전체 음식점 리스트가 나오는 화면에서 음식점 추가하는 화면을 비동기 방식으로 구현
 - 카테고리화면에서 세부카테고리 화면으로 전환시 비동기 방식으로 구현
 - mouseout :vs: mouseleave
 	- mouseleave : 자식 요소에는 동작하지 않고 지정한 태그 범위에만 적용됨.
