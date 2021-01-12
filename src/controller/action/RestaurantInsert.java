@@ -42,7 +42,7 @@ public class RestaurantInsert implements Action {
 				request.getSession().setAttribute("errorMsg", s.getMessage());
 
 			}catch(Exception s) {
-			request.getSession().setAttribute("errorMsg", "중복된 ID입니다");
+			request.getSession().setAttribute("errorMsg", "사용할 수 없는 ID입니다.");
 			
 				}
 		} else {
