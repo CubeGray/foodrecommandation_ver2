@@ -19,7 +19,7 @@ public class ActionFactory {
 	}
 	public Action getAction(String command){
 		Action action = null;
-
+				
 		if(command.equals("restaurantgetAll")){
 			action = new RestaurantgetAll();
 		}else if(command.equals("restaurantUpdate")){

@@ -10,43 +10,27 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-
-
-<header class="w3-container w3-theme w3-padding" id="myHeader">
-  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
-  <div class="w3-center">
-  <h1 class="w3-xxxlarge w3-animate-bottom">Restaurants near Playdata</h1>
-
-  </div>
-</header>
-
+<link rel="stylesheet"
+	href="https://www.w3schools.com/lib/w3-theme-black.css">
 </head>
 
 <body>
+	<header class="w3-container w3-theme w3-padding" id="myHeader">
+	<i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i>
+	<div class="w3-center">
+		<h1 class="w3-xxxlarge w3-animate-bottom">Restaurants near
+			Playdata</h1>
 
-	<script type="text/javascript">
-				function req() {
-					axios.get('restaurantInsert.jsp', {
-					})
-						.then(response => {
-							console.log(response.data); 
-							document.getElementById("ListTable").innerHTML
-								= response.data;
-						})
-						.catch(error => {
-							console.log(error);
-						});
-				};
-			</script>
-
+	</div>
+	</header>
+	
 	<br>
 	<br>
 	<br>
 	<center>
 		<div id="ListTable">
 			<h3>모든 restaurant 리스트</h3>
-		
+
 			<hr>
 			<p>
 			<table border="1">
@@ -74,15 +58,25 @@
 				</c:forEach>
 
 			</table>
-			<br>
-			<br>
-			<br> <a href="javascript:void(0);" onclick="req()">음식점 추가</a>
-
-			&nbsp;&nbsp;&nbsp;<a href="total">메인 화면 이동</a> <br>
-			<br>
-			<br>	
-		</div>		
-	</center>	
+			<br> <br> <br> <a href="javascript:void(0);"
+				onclick="req()">음식점 추가</a> &nbsp;&nbsp;&nbsp;<a href="total">메인
+				화면 이동</a> <br> <br> <br>
+		</div>
+	</center>
+	<script type="text/javascript">
+				function req() {
+					axios.get('restaurantInsert.jsp', {
+					})
+						.then(response => {
+							console.log(response.data); 
+							document.getElementById("ListTable").innerHTML
+								= response.data;
+						})
+						.catch(error => {
+							console.log(error);
+						});
+				};
+	</script>
 </body>
 
 </html>

@@ -10,20 +10,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+</head>
 
-
+<body>
 <header class="w3-container w3-theme w3-padding" id="myHeader">
   <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
   <div class="w3-center">
   <h1 class="w3-xxxlarge w3-animate-bottom">Food Suggestion</h1>
   </div>
 </header>
-
-
-
-
-</head>
-<body>
 <br><br><br>
 <center>
 
@@ -35,15 +30,12 @@ ${sessionScope.successMsg}
 <table border="1">
 	<tr>
 		<th>ID</th><th>Name</th><th>Pagelink</th>	
-	</tr>
-	
-    
+	</tr>  
  	<tr>
  		<td>${sessionScope.restaurant.rid}</td>
  		<td>${sessionScope.restaurant.rname}</td>
  		<td>${sessionScope.restaurant.pagelink}</td>
  	</tr>
- 
 </table>
 
 <br><br><br>
