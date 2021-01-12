@@ -40,9 +40,10 @@ public class RestaurantInsert implements Action {
 
 			} catch (NotExistException s) {
 				request.getSession().setAttribute("errorMsg", s.getMessage());
-
+				
 			}catch(Exception s) {
-				request.getSession().setAttribute("errorMsg", "사용할 수 없는 ID입니다.");			
+				request.getSession().setAttribute("errorMsg", "사용할 수 없는 ID입니다.");	
+				
 			}
 		} else {
 			request.getSession().setAttribute("errorMsg", "모든 요소 값들을 입력해주세요!");
