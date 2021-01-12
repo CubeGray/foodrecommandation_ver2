@@ -212,7 +212,7 @@ public class SpecificEntity {
 ![food_erg](./image/ERDver2.PNG)
 
 ## :open_file_folder: Kakao Map opensource API 사용
-기존에 DB에 저장된 외부링크를 통해 구현했던 카카오맵을 비동기 방식으로 페이지에 삽입하기 위해 Kakao devleopers(https://developers.kakao.com/)의 오픈소스를 통해 로컬에서 맵기능 구현
+기존에 DB에 저장된 외부링크를 통해 구현했던 카카오맵을 비동기 방식으로 페이지에 삽입하기 위해 Kakao devleopers( https://developers.kakao.com/ ) 의 오픈소스를 통해 로컬에서 맵기능 구현
 #
 > 문제점 : 비동기 형식으로 맵을 구현하려고 했으나 지도가 로드되지 않음
 -브라우저의 동작 방식에 의해 HTML 태그들을 파싱하는 도중 script 태그를 만나게되면 파싱을 중단 하고 javascript 파일을 로드 후
