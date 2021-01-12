@@ -40,7 +40,7 @@ public class RestaurantUpdate implements Action {
 				s.printStackTrace();
 			}
 		} else {
-			request.getSession().setAttribute("errorMsg", "지도 링크 입력값을 다시 한번 확인해주세요.");
+			request.getSession().setAttribute("errorMsg", "상세정보페이지 링크 입력값을 다시 한번 확인해주세요.");
 		}
 		request.getRequestDispatcher(url).forward(request, response);
 	}

@@ -27,7 +27,6 @@
 	<br>
 	<br>
 	<center>
-
 		<div id="categorytable">
 			<h1>카테고리를 선택하세요.</h1>
 			<table border="1">
@@ -79,9 +78,7 @@
 	}	
 
 	document.getElementById("categorytable").addEventListener('mouseleave', () => {
-		setTimeout(function () {
-		        location.reload();
-		});
+		location.reload();
 	});
 
 </script>
